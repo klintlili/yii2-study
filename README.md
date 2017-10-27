@@ -56,5 +56,5 @@ http://localhost/yii2/frontend/web/mobilequery/default/index
 ScreenShot
 -----
 
-![image](20171027192939.png)
+![Image text](https://github.com/klintlili/yii2-study/blob/master/20171027192939.png)
 
