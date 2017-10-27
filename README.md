@@ -2,6 +2,12 @@ yii2-mobileQuery
 ================
 yii2 extension for mobile phone number attribution inquiry
 
+
+Explain
+================
+这是我自己的第一个扩展
+
+
 Installation
 ------------
 
