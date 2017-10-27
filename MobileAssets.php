@@ -5,7 +5,7 @@ namespace klintlili\mobileQuery;
 use yii\base\View;
 use yii\web\AssetBundle;
 
-class MobileAsstes extends AssetBundle
+class MobileAssets extends AssetBundle
 {
     public $sourcePath = '@klintlili/mobileQuery/web';
     public $css = [

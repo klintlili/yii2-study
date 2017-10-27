@@ -1,35 +1,22 @@
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-<!--<head lang="en">-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>手机归属地查询</title>-->
-<!--    <link rel="stylesheet" href="statis/css/bootstrap.min.css"/>-->
-<!--    <script src="statis/js/jquery.min.js"></script>-->
-<!--    <script src="statis/js/base.js"></script>-->
-<!--    <style>-->
-<!--        .container {-->
-<!--            width: 300px;-->
-<!--        }-->
-<!--        #phoneInfo {-->
-<!--            display: none;-->
-<!--        }-->
-<!--    </style>-->
-<!--</head>-->
-<!--<body>-->
 <?php
-use klintlili\mobileQuery\MobileAsstes;
+use yii\helpers\Html;
+use klintlili\mobileQuery\MobileAssets;
+
 $this->title = "手机归属地查询";
-MobileAsstes::register($this);
+MobileAssets::register($this);
 ?>
-?>
-<style>
-    .container {
-        width: 300px;
-    }
-    #phoneInfo {
-        display: none;
-    }
-</style>
+<?php $this->beginPage() ?>
+<!DOCTYPE html>
+<html lang="<?= Yii::$app->language ?>">
+<head>
+    <meta charset="<?= Yii::$app->charset ?>"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?= Html::csrfMetaTags() ?>
+    <title><?= Html::encode($this->title) ?></title>
+    <?php $this->head() ?>
+</head>
+<body>
+<?php $this->beginBody() ?>
     <div class="container">
         <div class="form-group">
             <label for="phoneText">请输入手机号码</label>
@@ -59,22 +46,17 @@ MobileAsstes::register($this);
             </tr>
         </table>
     </div>
-<!--</body>-->
-<script>
-//    $(document).ready(function(){
-//        $('#subPhone').click(function(){
-//            var phone = $('#phoneText').val();
-//            IMOOC.GLOBAL.ajax('api.php', 'post', {phone: phone}, 'json', IMOOC.APPS.QUERYPHONE.dataCallback);
-//        });
-//    });
-//</script>
-<!--</html>-->
 <?php $this->registerJs("
      $(document).ready(function(){
+        var csrfToken = $('meta[name=\"csrf-token\"]').attr(\"content\");
         $('#subPhone').click(function(){
             var phone = $('#phoneText').val();
-            IMOOC.GLOBAL.ajax('api.php', 'post', {phone: phone}, 'json', IMOOC.APPS.QUERYPHONE.dataCallback);
+            IMOOC.GLOBAL.ajax('mobilequery/default/api', 'post', {phone: phone, _csrf: csrfToken}, 'json', IMOOC.APPS.QUERYPHONE.dataCallback);
         });
     });
 ",\yii\web\View::POS_END);
 ?>
+<?php $this->endBody() ?>
+</body>
+</html>
+<?php $this->endPage() ?>

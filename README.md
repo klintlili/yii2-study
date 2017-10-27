@@ -49,3 +49,12 @@ Once the extension is installed, simply use it in your browser by  :
 ```
 http://localhost/yii2/frontend/web/mobilequery/default/index
 ```
+
+
+
+
+ScreenShot
+-----
+
+![image](20171027192939.png)
+

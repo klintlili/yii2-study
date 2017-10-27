@@ -12,16 +12,18 @@ use klintlili\mobileQuery\app\MobileQuery;
 class DefaultController extends Controller
 {
 
+    //public $enableCsrfValidation = false;
+
     /**
      * Renders the index view for the module
      * @return string
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        return $this->renderPartial('index');
     }
 
-    public function actionApp(){
+    public function actionApi(){
         $params = $_POST;
         $phone = $params['phone'];
         $response = MobileQuery::query($phone);
