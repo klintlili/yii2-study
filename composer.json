@@ -1,0 +1,21 @@
+{
+    "name": "klintlili/yii2-mobilequery",
+    "description": "yii2 extension for mobile phone number attribution inquiry",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","yii2-mobileQuery"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "klintlili",
+            "email": "834105056@qq.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "klintlili\\mobileQuery\\": ""
+        }
+    }
+}
